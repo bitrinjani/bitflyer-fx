@@ -1,4 +1,4 @@
-
+[![Build Status](https://travis-ci.org/bitrinjani/bitflyer-fx.svg?branch=master)](https://travis-ci.org/bitrinjani/bitflyer-fx) [![Coverage Status](https://coveralls.io/repos/github/bitrinjani/bitflyer-fx/badge.svg?branch=master)](https://coveralls.io/github/bitrinjani/bitflyer-fx?branch=master) [![npm version](https://badge.fury.io/js/%40bitr%2Fbitflyer-fx.svg)](https://badge.fury.io/js/%40bitr%2Fbitflyer-fx)
 # bitFlyer BTC-FX/JPY plugin for R2 Bitcoin Arbitrager
 This is an optional broker plugin for [R2](https://github.com/bitrinjani/r2). The plugin adds bitFlyer BTC-FX/JPY as a broker in R2.
 
