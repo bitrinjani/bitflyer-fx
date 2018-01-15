@@ -1,0 +1,7 @@
+lib/
+__tests__/
+coverage
+.travis.yml
+yarn.lock
+tsconfig.json
+database/

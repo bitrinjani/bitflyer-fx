@@ -1,0 +1,57 @@
+{
+  "name": "@bitr/bitflyer-fx",
+  "version": "1.0.3",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "tsc",
+    "test": "jest --coverage --runInBand",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": ["r2", "plugin", "bitcoin", "arbitrage"],
+  "repository": "https://github.com/bitrinjani/bitflyer-fx",
+  "author": "bitrinjani <bitrinjani@gmail.com>",
+  "dependencies": {
+    "@bitr/castable": "^1.0.2",
+    "lodash": "^4.17.4",
+    "node-fetch": "^1.7.3",
+    "pino": "^4.10.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^21.1.4",
+    "@types/lodash": "^4.14.91",
+    "@types/nock": "^9.1.1",
+    "@types/node": "^8.0.46",
+    "jest": "^21.0.3",
+    "nock": "^9.1.6",
+    "rimraf": "^2.6.2",
+    "ts-jest": "^21.0.0",
+    "ts-node": "3",
+    "tslint": "^5.8.0",
+    "tslint-config-airbnb": "^5.4.2",
+    "typescript": "^2.5.3"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "/__tests__/.*\\.test\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json"
+    ],
+    "mapCoverage": true,
+    "collectCoverageFrom": [
+      "**/*.{ts,tsx}",
+      "!**/__tests__/**",
+      "!**/node_modules/**",
+      "!**/*.d.ts",
+      "!**/types.ts",
+      "!scripts/*.ts"
+    ]
+  }
+}
