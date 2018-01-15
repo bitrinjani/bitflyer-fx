@@ -1,6 +1,6 @@
 
 # bitFlyer BTC-FX/JPY plugin for R2 Bitcoin Arbitrager
-This is a broker plugin for [R2](https://github.com/bitrinjani/r2).
+This is an optional broker plugin for [R2](https://github.com/bitrinjani/r2). The plugin adds bitFlyer BTC-FX/JPY as a broker in R2.
 
 # Install
 
@@ -30,10 +30,11 @@ Then set your key/secret in broker section in config.json.
 ...
 ```
 
-# Caution
+# ⚠️Caution
 
 - Do not enable both bitFlyer BTC/JPY (Bitflyer broker) and bitFlyer BTC-FX/JPY (BitflyerFX broker) at the same time in R2. Or you may encounter API usage limits from the exchange.
-- BTC-FX/JPY price is totally different from BTC/JPY price, and they are not correlated (for now). If you do not fully understand how the config parameters work, please do not use this plugin.
+- BTC-FX/JPY price is totally different from BTC/JPY price, and they are not correlated (for now). If you do not fully understand how the config parameters work such as minTargetProfitPercent, please do not use this plugin.
 
-- 標準のBitflyerブローカーとこのBitflyerFXブローカーを同時に有効にしないでください。取引所のAPI使用回数制限にひっかかる可能性があります。
-- 現在のところ、BTC-FX/JPY価格はBTC/JPY価格とまったく異なり、その価格変動は相関していません。設定値の動作について理解していない方は、このプラグインを使わないほうがよいです。
+# ⚠️注意
+- 標準のBitflyerブローカーとこのBitflyerFXブローカーを同時に有効にしないでください。取引所のAPI使用回数制限に達する可能性があります。
+- 現在のところ、BTC-FX/JPY価格はBTC/JPY価格とまったく異なり、その価格変動は相関していません。minTargetProfitPercent等のパラメタータ設定が難しいため、その動作について十分に理解していない方はこのプラグインを使用しないでください。
