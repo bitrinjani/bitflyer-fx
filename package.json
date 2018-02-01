@@ -1,19 +1,27 @@
 {
   "name": "@bitr/bitflyer-fx",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "tsc",
-    "test": "jest --coverage --runInBand",
+    "test": "npm run cov && cat ./coverage/lcov.info | coveralls",
+    "jest": "jest --runInBand",
+    "cov": "jest --runInBand --coverage",
     "prepublishOnly": "npm run build"
   },
-  "keywords": ["r2", "plugin", "bitcoin", "arbitrage"],
+  "keywords": [
+    "r2",
+    "plugin",
+    "bitcoin",
+    "arbitrage"
+  ],
   "repository": "https://github.com/bitrinjani/bitflyer-fx",
   "author": "bitrinjani <bitrinjani@gmail.com>",
   "dependencies": {
     "@bitr/castable": "^1.0.2",
+    "coveralls": "^3.0.0",
     "lodash": "^4.17.4",
     "node-fetch": "^1.7.3",
     "pino": "^4.10.2"

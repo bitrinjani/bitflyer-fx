@@ -69,7 +69,7 @@ export default class BrokerAdapterImpl implements BrokerAdapter {
   async cancel(order: Order): Promise<void> {
     let productCode = '';
     switch (order.symbol) {
-      case 'BTCJPY':
+      case 'BTC/JPY':
         productCode = this.productCode;
         break;
       default:
@@ -87,14 +87,8 @@ export default class BrokerAdapterImpl implements BrokerAdapter {
   }
 
   async fetchQuotes(): Promise<Quote[]> {
-    try {
-      const response = await this.brokerApi.getBoard();
-      return this.mapToQuote(response);
-    } catch (ex) {
-      this.log.error(ex.message);
-      this.log.debug(ex.stack);
-      return [];
-    }
+    const response = await this.brokerApi.getBoard();
+    return this.mapToQuote(response);
   }
 
   private mapOrderToSendChildOrderRequest(order: Order): SendChildOrderRequest {
@@ -104,7 +98,7 @@ export default class BrokerAdapterImpl implements BrokerAdapter {
 
     let productCode = '';
     switch (order.symbol) {
-      case 'BTCJPY':
+      case 'BTC/JPY':
         productCode = this.productCode;
         break;
       default:

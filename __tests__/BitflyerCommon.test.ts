@@ -22,7 +22,7 @@ function createOrder(
     cashMarginType,
     type,
     leverageLevel,
-    symbol: 'BTCJPY',
+    symbol: 'BTC/JPY',
     timeInForce: TimeInForce.None
   };
 }
@@ -83,7 +83,7 @@ describe('Bitflyer BrokerAdapter', () => {
     const order = {
       broker: 'BitflyerFX',
       cashMarginType: CashMarginType.NetOut,
-      symbol: 'BTCJPY',
+      symbol: 'BTC/JPY',
       type: OrderType.StopLimit
     };
     try {
@@ -99,7 +99,7 @@ describe('Bitflyer BrokerAdapter', () => {
     const order = {
       broker: 'BitflyerFX',
       cashMarginType: CashMarginType.NetOut,
-      symbol: 'BTCJPY',
+      symbol: 'BTC/JPY',
       type: OrderType.Market,
       timeInForce: 'MOCK'
     };
@@ -113,7 +113,7 @@ describe('Bitflyer BrokerAdapter', () => {
 
   test('cancel', async () => {
     const target = new BitflyerFX(brokerConfig);
-    const order = { symbol: 'BTCJPY', brokerOrderId: 'JRF20150707-033333-099999' };
+    const order = { symbol: 'BTC/JPY', brokerOrderId: 'JRF20150707-033333-099999' };
     await target.cancel(order);
     expect(order.status).toBe(OrderStatus.Canceled);
   });
@@ -182,7 +182,7 @@ describe('Bitflyer BrokerAdapter', () => {
   test('refresh', async () => {
     const target = new BitflyerFX(brokerConfig);
     const order = {
-      symbol: 'BTCJPY',
+      symbol: 'BTC/JPY',
       type: 'Limit',
       timeInForce: 'None',
       id: '438f7c7b-ed72-4719-935f-477ea043e2b0',
@@ -205,7 +205,7 @@ describe('Bitflyer BrokerAdapter', () => {
   test('refresh Expired', async () => {
     const target = new BitflyerFX(brokerConfig);
     const order = {
-      symbol: 'BTCJPY',
+      symbol: 'BTC/JPY',
       type: 'Limit',
       timeInForce: 'None',
       id: '438f7c7b-ed72-4719-935f-477ea043e2b0',
@@ -228,7 +228,7 @@ describe('Bitflyer BrokerAdapter', () => {
   test('refresh Canceled', async () => {
     const target = new BitflyerFX(brokerConfig);
     const order = {
-      symbol: 'BTCJPY',
+      symbol: 'BTC/JPY',
       type: 'Limit',
       timeInForce: 'None',
       id: '438f7c7b-ed72-4719-935f-477ea043e2b0',
@@ -251,7 +251,7 @@ describe('Bitflyer BrokerAdapter', () => {
   test('refresh Partially filled', async () => {
     const target = new BitflyerFX(brokerConfig);
     const order = {
-      symbol: 'BTCJPY',
+      symbol: 'BTC/JPY',
       type: 'Limit',
       timeInForce: 'None',
       id: '438f7c7b-ed72-4719-935f-477ea043e2b0',
@@ -274,7 +274,7 @@ describe('Bitflyer BrokerAdapter', () => {
   test('refresh unknown order id', async () => {
     const target = new BitflyerFX(brokerConfig);
     const order = {
-      symbol: 'BTCJPY',
+      symbol: 'BTC/JPY',
       type: 'Limit',
       timeInForce: 'None',
       id: '438f7c7b-ed72-4719-935f-477ea043e2b0',
