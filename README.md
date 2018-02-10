@@ -4,15 +4,9 @@ This is an optional broker plugin for [R2](https://github.com/bitrinjani/r2). Th
 
 # Install
 
-Install from npm repository.
+No installation is required as the npm package is already included in R2.
 
-```bash
-npm install @bitr/bitflyer-fx
-#or
-yarn add @bitr/bitflyer-fx
-```
-
-Then set your key/secret in broker section in config.json.
+Add a broker config section and set your key/secret in config.json as below. The cashMarginType must be NetOut.
 
 ```
 ...
