@@ -2,7 +2,7 @@
 import * as nock from 'nock';
 
 function nocksetup() {
-  const api = nock('https://api.bitflyer.jp');
+  const api = nock('https://api.bitflyer.com');
 
   api
     .post('/v1/me/sendchildorder', {
